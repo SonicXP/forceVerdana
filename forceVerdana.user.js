@@ -5,7 +5,7 @@
 // @description		将页面中的宋体替换为Verdana
 // @features		将页面中的宋体替换为Verdana
 // @version			0.1
-// @revision		1
+// @revision		2
 // @author			@sonicxp
 // @committers		@sonicxp
 // @include			http://*
@@ -23,8 +23,8 @@
 	var tags = $("html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video");
 	$.each(tags, function(i,tag) {
 		var ff = $(tag).css("font-family");
-		if (ff.indexOf("simsun") || ff.indexOf("宋体")) {
-			$(tag).css("font-family", ff.replace("simsun", "Verdana").replace("宋体", "Verdana"));
+		if (ff.toLowerCase().indexOf("simsun") || ff.indexOf("宋体")) {
+			$(tag).css("font-family", ff.replace(/simsun/i, "Verdana").replace("宋体", "Verdana"));
 		}
 	});
 })();
